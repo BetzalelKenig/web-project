@@ -10,24 +10,27 @@
 <body>
     <h1>Calculator</h1>
     <div class="input">
-        <input type="text" placeholder="first number">
+        <input id="first-number" type="text" placeholder="first number">
     </div>
     <div>
         <div>
-            <button class="addition">+</button>
-            <button class="substruction">-</button>
+            <button id="add" data-operation class="addition">+</button>
+            <button id="sub" data-operation class="substruction">-</button>
         </div>
     <div>
         <div>
-            <button class="multipection">*</button>
-            <button class="division">÷</button>
+            <button id="mul" data-operation class="multipection">*</button>
+            <button id="div" data-operation class="division">÷</button>
         </div>
     </div>
     <div class="input">
-        <input type="text" placeholder="second number">
+        <input id="second-number" type="text" placeholder="second number">
     </div>
     <div class="resolts">
-        <h2>Resolt history</h2>
+        <h2>Resolts history</h2>
+        <ul resolts>
+
+        </ul>
     </div>
 </body>
 </html>

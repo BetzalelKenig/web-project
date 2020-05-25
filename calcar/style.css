@@ -1,0 +1,24 @@
+body{
+    padding: 0;
+    margin: 0;
+    /* background: linear-gradient(to right, red, orange, #00ff6c,yellow);*/
+} 
+
+button {
+    width: 5%;
+    background: cadetblue;
+    border: blue,40px;
+}
+
+input {
+    width: 20%;
+    background-color: beige;
+    border: black,8px;
+}
+.input{
+  
+ 
+}
+
+
+
