@@ -4,6 +4,8 @@ let results = document.querySelector("ul");
 const operationButtons = document.querySelectorAll("[data-operation]");
 
 const validation = (n) => n.replace(/[^0-9]+/g, "");
+
+
 let i1 = parseInt(validation(input1.value));
 let i2 = parseInt(validation(input2.value));
 operationButtons.forEach((button) => {

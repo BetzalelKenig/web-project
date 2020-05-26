@@ -1,0 +1,20 @@
+body {
+  overflow: hidden;
+  background-color: aqua
+}
+h1 {
+  text-align: ;
+}
+/* .hgallery {
+    height: 60%;
+} */
+.gallery {
+  display: inline-flex;
+}
+
+div > img {
+  overflow: auto;
+  border: 5px solid #00ff00;
+  margin: 2px;
+  height: 400px;
+}
