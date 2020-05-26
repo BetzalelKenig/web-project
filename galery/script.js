@@ -1,4 +1,4 @@
-let image = [
+let imageArr = [
   "./images/cars.jpg",
   "./images/code_8.jpg",
   "./images/frozen_2.jpg",
@@ -13,9 +13,15 @@ let image = [
 ];
 
 galery = document.querySelector("galery");
-image.forEach(p => {
-  document.querySelector(".gallery").innerHTML += `<img src="${p}"/>`;
-});
+// image.forEach(p => {
+//   document.querySelector(".gallery").innerHTML += `<img src="${p}"/>`;
+// });
 
+let currentPos = 0;
+setImg = () => {
+  if (++currentPos >= imageArr.length) currentPos = 0;
+  p = imageArr[currentPos];
+  document.querySelector(".gallery").innerHTML = `<img src="${p}"/>`;
+};
 
-
+setInterval(setImg, 1000);
