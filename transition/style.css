@@ -1,0 +1,23 @@
+ul {
+    background: coral;
+    position: relative;
+
+}
+
+li {
+    position: absolute;
+    top: 0;
+    left: -100%;
+}
+li.show{
+    position: absolute;
+    left: 0;
+    transition: left 1s;
+    
+    
+}
+li.hide {
+    position: absolute;
+    left: 100%;
+    transition: left 1s;
+}
