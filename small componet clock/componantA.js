@@ -9,8 +9,8 @@ class inputClock extends HTMLElement {
 
         this.shadowRoot.querySelector('label').innerText = 'Change Clock header';
         this.shadowRoot.querySelector('button').addEventListener('click', () => {
-           document.querySelector('h3').innerText = 'gggggg';
-           console.log(document)
+            this.shadowRoot.querySelector('h3').innerText =  this.shadowRoot.querySelector('input').value;
+           
         });
     };
 };
