@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Details</h2>
+    <ul id="the-list"></ul>
+
+    <!-- table -->
+    <table style="width: 100%;">
+      <tr>
+        <thead>
+          <th>id</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+        </thead>
+        <tbody id="table1"></tbody>
+      </tr>
+    </table>
+  </body>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+  <script>
+    function loadXMLDoc() {
+      let xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          let jsonobj = JSON.parse(this.responseText);
+          let persons = this.responseText;
+          for (const i of jsonobj) {
+            document.querySelector("#table1").innerHTML += `<tr>
+          <td>${i.id}</td>
+          <td>${i.first_name}</td>
+          <td>${i.last_name}</td>
+          <td>${i.email}</td>
+        </tr>`;
+
+            //`<li>name: ${i.id}</li>`;
+          }
+
+          //document.querySelector("#the-list").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open(
+        "GET",
+        "https://raw.githubusercontent.com/BetzalelKenig/web-projects/master/ajax/random-persons.json",
+        true
+      );
+      xhttp.send();
+    }
+    loadXMLDoc();
+  </script>
+</html>
