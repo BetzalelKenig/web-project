@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let processes = [
+          () => setTimeout(() => console.log('%c a process', 'background: #0f0; color: #f00'), 1000),
+          () => setTimeout(() => console.log('%c b process', 'background: #0f0; color: #f00'), 200),
+          () => setTimeout(() => console.log('%c c process', 'background: #0f0; color: #f00'), 800),
+          () => setTimeout(() => console.log('%c d process', 'background: #0f0; color: #f00'), 1500),
+          () => setTimeout(() => console.log('%c d process', 'background: #0f0; color: #f00'), 200),
+          () => setTimeout(() => console.log('%c d process', 'background: #0f0; color: #f00'), 100),
+        ]
+        const job = () => processes.forEach(e => e());
+
+        let processes2 = [
+          () => setTimeout(() => console.log('%c a process', 'background: red; color: #000'), 1000),
+          () => setTimeout(() => console.log('%c b process', 'background: red; color: #0f0'), 200),
+          () => setTimeout(() => console.log('%c c process', 'background: red; color: #0f0'), 800),
+          () => setTimeout(() => console.log('%c d process', 'background: red; color: #0f0'), 1500),
+          () => setTimeout(() => console.log('%c d process', 'background: red; color: #0f0'), 200),
+          () => setTimeout(() => console.log('%c d process', 'background: red; color: #0f0'), 100),
+        ]
+        const job2 = () => processes2.forEach(e => e());
+    </script>
+</head>
+<body>
+    <h2>asinc</h2>
+    <ul id="asinc"></ul>
+    <button onclick="job()" style="background-color: green;">Green process</button>
+    <button onclick="job2()" style="background-color: red;">Red process</button>
+</body>
+</html>
